@@ -116,7 +116,7 @@ Once your database set up, you can create some users:
     from your_application import User
 
     admin = User.create(name='admin', email='admin@example.com')
-    guest = Guest.create(name='guest', email='guest@example.com')
+    guest = User.create(name='guest', email='guest@example.com')
 
 The ``create()`` method will create the users instantly. But you can also
 initiate them and save them later:
@@ -137,7 +137,7 @@ initiate them and save them later:
 
         with db.transaction():
             admin = User.create(name='admin', email='admin@example.com')
-            guest = Guest.create(name='guest', email='guest@example.com')
+            guest = User.create(name='guest', email='guest@example.com')
 
 You can now retrieve them easily from the database:
 
